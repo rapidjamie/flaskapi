@@ -35,14 +35,15 @@ jobs:
             echo "$file was modified"
           done            
 
-      - name: POST to RapidAPI
-        uses: fjogeleit/http-request-action@master
+      - name: Form Data Http POST Action
+  # You may pin to the exact commit or the version.
+  # uses: alikamal1/Form_Data_HTTP_POST_Action@f0fc338deb221b17c617c346d3d944e7e645ec8b
+        uses: alikamal1/Form_Data_HTTP_POST_Action@v.1.0
         with:
           url: 'https://platformapi.p.rapidapi.com/v1/apis'
-          method: 'POST'
+          headers: '{ "X-RapidAPI-Host": "platformapi.jeff.rapidapi.com" , "X-RapidAPI-Key": "aed1c6408fmshcb2c5c09cc5db9bp184cb1jsn0a88d24007c2" , "content-type": "application/x-www-form-urlencoded"}'
           data: '{ "category": "Other" , "description": "github create api test" , "name": "test_github_createAPI"}'
-          customHeaders: '{ "X-RapidAPI-Host": "platformapi.jeff.rapidapi.com" , "X-RapidAPI-Key": "aed1c6408fmshcb2c5c09cc5db9bp184cb1jsn0a88d24007c2" , "content-type": "application/x-www-form-urlencoded"}'
-          files: '{ "file": "${{ github.workspace }}/openAPI.json" }'
+          file: ${{ github.workspace }}/openAPI.json
 
       - name: Show Response
         run: echo ${{ steps.postToIntegrationLayer.outputs.response }}   
