@@ -41,7 +41,7 @@ jobs:
           url: 'https://platformapi.p.rapidapi.com/v1/apis'
           method: 'POST'
           data: '{ "category": "Other" & "description": "github create api test" & "name": "test_github_createAPI"}'
-          headers: '{ "X-RapidAPI-Host": "platformapi.jeff.rapidapi.com" & "X-RapidAPI-Key": "aed1c6408fmshcb2c5c09cc5db9bp184cb1jsn0a88d24007c2" & "content-type": "application/x-www-form-urlencoded"}'
+          customHeaders: '{ "X-RapidAPI-Host": "platformapi.jeff.rapidapi.com" & "X-RapidAPI-Key": "aed1c6408fmshcb2c5c09cc5db9bp184cb1jsn0a88d24007c2" & "content-type": "application/x-www-form-urlencoded"}'
           files: '{ "file": "${{ github.workspace }}/openAPI.json" }'
 
       - name: Show Response
