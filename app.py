@@ -27,4 +27,4 @@ def isValid(email):
     if re.fullmatch(regex, email):
         return "Valid email"
     else:
-        print "Invalid email"
+        return "Invalid email"
