@@ -1,0 +1,48 @@
+name: Deploy to RapidAPI
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the main branch
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 2
+
+      # Get spec files that have changed
+      - name: Get specific changed files
+        id: changed-spec-files
+        uses: tj-actions/changed-files@v16
+        with:
+          files: |
+            **/*.json
+
+      # print list of files for debug purposes
+      - name: List updated spec files
+        run: |
+          for file in ${{ steps.changed-spec-files.outputs.modified_files }}; do
+            echo "$file was modified"
+          done            
+
+      - name: POST to RapidAPI
+        uses: fjogeleit/http-request-action@master
+        with:
+          url: 'https://platformapi.p.rapidapi.com/v1/apis'
+          method: 'POST'
+          data: '{ "category": "Other"} & {"description": "github create api test"} & {"name": "test_github_createAPI"}'
+          customHeaders: '{ "X-RapidAPI-Host": "platformapi.jeff.rapidapi.com"} & {"X-RapidAPI-Key": "aed1c6408fmshcb2c5c09cc5db9bp184cb1jsn0a88d24007c2"} & {"content-type": "application/x-www-form-urlencoded"}'
+          files: '{ "file": "${{ github.workspace }}/openAPI.json" }'
+
+      - name: Show Response
+        run: echo ${{ steps.postToIntegrationLayer.outputs.response }}   
