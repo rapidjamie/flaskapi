@@ -15,7 +15,7 @@
   "paths": {
     "/getAllNames": {
       "get": {
-        "summary": "List all names in system",
+        "summary": "List all names in system- test1",
         "operationId": "GetAllNames",
         "tags": [
           "names"
