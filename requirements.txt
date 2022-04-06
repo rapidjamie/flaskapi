@@ -1,2 +1,4 @@
-flask
+flask~=2.1.1
 gunicorn
+apispec~=5.1.1
+marshmallow~=3.15.0
