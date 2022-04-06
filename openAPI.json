@@ -2,7 +2,7 @@
   "openapi": "3.0.0",
   "info": {
     "version": "1.0.0",
-    "title": "Flask Demo API",
+    "title": "Flask Demo API - test",
     "license": {
       "name": "MIT"
     }
