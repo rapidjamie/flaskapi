@@ -1,20 +1,16 @@
 {
   "openapi": "3.0.0",
-  "x-rapidapi-info": {
-    "apiVersionId": "apiversion_eb27ab79-b196-42c5-aa22-46b1ec8cf826",
-    "apiId": "api_0295fee2-7a25-430e-94d8-5b67a2b66007"
-  },
   "x-documentation": {
     "tutorials": [],
     "spotlights": []
   },
   "x-gateways": [],
   "info": {
-    "title": "Flask Demo",
+    "title": "Flask Demo vis Github",
     "version": "Current",
-    "description": "Flask Demo",
+    "description": "Flask Demo vis Github",
     "x-category": "Other",
-    "x-long-description": "Flask Demo",
+    "x-long-description": "Flask Demo vis Github",
     "x-website": "",
     "x-public": false,
     "x-thumbnail": "https://rapidapi-prod-apis.s3.amazonaws.com/707f0e1e-75eb-4c1d-8e40-9b1188367d7e.png",
