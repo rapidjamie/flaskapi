@@ -32,8 +32,13 @@ def email(email):
     return isValid(email)
 
 
+@app.route('/test')
+def test():
+    return "demo"
+
+
 def isValid(emailInput):
     if re.fullmatch(regex, emailInput):
-        return "{Valid email}"
+        return jsonify("{'isValid' : 'Valid email'}")
     else:
-        return "{Invalid email}"
+        return  jsonify("{'isValid' : 'Invalid email'}")
