@@ -51,3 +51,17 @@ jobs:
 
       - name: Show Response
         run: echo ${{ steps.postToIntegrationLayer.outputs.response }}    
+        
+      # Run a RapidAPI Testing Suite
+      - name: Run RapidAPI Testing Suite
+        id: runRapidAPITestSuite
+        # I skipped the spec change spec because tests should be run on every commit
+        # if: steps.changed-spec-files.outputs.any_changed == 'true'
+        uses: fjogeleit/http-request-action@v1.9.0
+        with:
+          url: https://james.hub.rapidapi.com/testing/api/trigger/test/test_96ae0e78-3691-419e-b411-a5a41407eb12/execute?location=AWS-US-EAST-1&source=trigger&environment=environment_9454b13d-1fd2-4025-84ae-48d08c14989e
+          method: POST
+          contentType: "application/json"
+
+      - name: Show Response Testing
+        run: echo ${{ steps.runRapidAPITestSuite.outputs.response }}   
