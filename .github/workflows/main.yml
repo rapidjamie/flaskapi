@@ -33,7 +33,16 @@ jobs:
         run: |
           for file in ${{ steps.changed-spec-files.outputs.modified_files }}; do
             echo "$file was modified"
-          done    
+          done 
+          
+      # Deploy to Heroku
+      - name: Deploy to Heroku
+        id: deployToHeroku
+        uses: akhileshns/heroku-deploy@v3.12.12
+        with:
+          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+          heroku_app_name: "nameless-depths-63278" #Must be unique in Heroku
+          heroku_email: "xyzeroding@gmail.com"
           
       # POST to Integration Service
       - name: Post to Integration Layer
