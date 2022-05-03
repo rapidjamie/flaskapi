@@ -1,6 +1,8 @@
 import flask
 from flask import request, jsonify
 import re
+import json
+
 
 app = flask.Flask(__name__)
 
@@ -34,7 +36,14 @@ def email(email):
 
 
 def isValid(emailInput):
+
     if re.fullmatch(regex, emailInput):
-        return jsonify("{'isValid' : 'Valid email'}")
+        response = {
+            "isValid": "Valid email"
+        }
+        return json.dumps(response)
     else:
-        return  jsonify("{'isValid' : 'Invalid email'}")
+        response = {
+            "isValid": "invalid email"
+        }
+        return  json.dumps(response)
