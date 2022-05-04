@@ -45,7 +45,7 @@ def index():
         'email': 'jeff@rapidapi.com'
     }, {
         'id': 2,
-        'name': 'Yih Jeff Test',
+        'name': 'Jeff Test',
         'email': 'jeff@rapidapi.com'
     }]
 
