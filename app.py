@@ -32,13 +32,13 @@ def isValid(emailInput):
             "domain" : emailInput.split("@")[1], 
             "isValid": "Valid email"
         }
-        return json.dumps(response)
+        return jsonify(response)
     else:
         response = {
             "email" : emailInput,
             "isValid": "invalid email"
         }
-        return  json.dumps(response)
+        return  jsonify(response)
 
 
 @app.route('/getAllNames')
@@ -54,8 +54,6 @@ def index():
     }]
 
     return jsonify(dummy_data)
-
-
 
 
 
