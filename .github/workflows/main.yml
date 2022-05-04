@@ -36,13 +36,13 @@ jobs:
           done 
           
       # Deploy to Heroku
-      # - name: Deploy to Heroku
-      #   id: deployToHeroku
-      #   uses: akhileshns/heroku-deploy@v3.12.12
-      #   with:
-      #     heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-      #     heroku_app_name: "nameless-depths-63278" #Must be unique in Heroku
-      #     heroku_email: "xyzeroding@gmail.com"
+      - name: Deploy to Heroku
+        id: deployToHeroku
+        uses: akhileshns/heroku-deploy@v3.12.12
+        with:
+          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+          heroku_app_name: "nameless-depths-63278" #Must be unique in Heroku
+          heroku_email: "xyzeroding@gmail.com"
           
       # POST to Integration Service
       - name: Post to Integration Layer
@@ -61,6 +61,8 @@ jobs:
       - name: Show Response
         run: echo ${{ steps.postToIntegrationLayer.outputs.response }}    
 
+      # Execute the Integration Tests on RapidAPI 
+      # A failed test from RapidAPI will fail the GitHub Action
       - name: Execute Tests
         id: tstExec
         uses: RapidAPI/gh-api-testing-trigger@jeffrapid-patch-1 
