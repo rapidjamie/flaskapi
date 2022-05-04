@@ -15,10 +15,6 @@ def home():
     return jsonify({'msg': 'Server running'})
 
 
-if __name__ == '__main__':
-    app.run(debug=True)
-
-
 @app.route('/validateEmail/<email>')
 def email(email):
     return isValid(email)
@@ -85,3 +81,8 @@ def sendEmail(emailAddress):
     response = requests.request("POST", url, json=payload, headers=headers)
 
     print(response.text)
+
+
+
+if __name__ == '__main__':
+    app.run(debug=True)

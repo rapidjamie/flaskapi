@@ -60,17 +60,14 @@ jobs:
 
       - name: Show Response
         run: echo ${{ steps.postToIntegrationLayer.outputs.response }}    
-        
-      # Run a RapidAPI Testing Suite
-      - name: Run RapidAPI Testing Suite
-        id: runRapidAPITestSuite
-        # I skipped the spec change spec because tests should be run on every commit
-        # if: steps.changed-spec-files.outputs.any_changed == 'true'
-        uses: fjogeleit/http-request-action@v1.9.0
-        with:
-          url: https://james.hub.rapidapi.com/testing/api/trigger/test/test_96ae0e78-3691-419e-b411-a5a41407eb12/execute?location=AWS-US-EAST-1&source=trigger&environment=environment_9454b13d-1fd2-4025-84ae-48d08c14989e
-          method: POST
-          contentType: "application/json"
 
-      - name: Show Response Testing
-        run: echo ${{ steps.runRapidAPITestSuite.outputs.response }}   
+      - name: Execute Tests
+        id: tstExec
+        uses: RapidAPI/gh-api-testing-trigger@v0.0.3
+        with:
+          test: 'test_9217f3ae-80a8-455c-aa6f-4d33f28c24a7'
+          location: 'AWS-US-EAST-1'
+          #environment: 'ENV_ID(OPTIONAL)'
+
+      - name: Show Testing Results
+        run: echo "The test took ${{ steps.tstExec.outputs.time }}ms to run"; echo "The test result was ${{ steps.tstExec.outputs.computedStatus }}"; echo "View Report - ${{ steps.tstExec.outputs.reportUrl }}"
