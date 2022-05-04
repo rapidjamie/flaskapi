@@ -2,6 +2,7 @@ import flask
 from flask import request, jsonify
 import re
 import json
+import requests
 
 
 app = flask.Flask(__name__)
@@ -11,7 +12,30 @@ regex = re.compile(r'([A-Za-z0-9]+[.-_])*[A-Za-z0-9]+@[A-Za-z0-9-]+(\.[A-Z|a-z]{
 
 @app.route('/', methods=['GET'])
 def home():
-    return 'hello world'
+    return jsonify({'msg': 'Server running'})
+
+
+if __name__ == '__main__':
+    app.run(debug=True)
+
+
+@app.route('/validateEmail/<email>')
+def email(email):
+    return isValid(email)
+
+
+def isValid(emailInput):
+
+    if re.fullmatch(regex, emailInput):
+        response = {
+            "isValid": "Valid email"
+        }
+        return json.dumps(response)
+    else:
+        response = {
+            "isValid": "invalid email"
+        }
+        return  json.dumps(response)
 
 
 @app.route('/getAllNames')
@@ -29,21 +53,34 @@ def index():
     return jsonify(dummy_data)
 
 
-@app.route('/validateEmail/<email>')
-def email(email):
-    return isValid(email)
 
 
 
-def isValid(emailInput):
+def sendEmail(emailAddress):
 
-    if re.fullmatch(regex, emailInput):
-        response = {
-            "isValid": "Valid email"
-        }
-        return json.dumps(response)
-    else:
-        response = {
-            "isValid": "invalid email"
-        }
-        return  json.dumps(response)
+    payload = {
+	    "personalizations": [
+		    {
+			    "to": [{"email": emailAddress}],
+			    "subject": "Hello, World!"
+		    }
+	],
+	"from": {"email": "jeff@rapidapi.com"},
+	"content": [
+		    {
+			    "type": "text/plain",
+			    "value": "Hello, World!"
+		    }
+	    ]
+    }  
+    url = "https://rapidprod-sendgrid-v1.p.rapidapi.com/mail/send"
+
+    headers = {
+	    "content-type": "application/json",
+	    "X-RapidAPI-Host": "rapidprod-sendgrid-v1.p.rapidapi.com",
+	    "X-RapidAPI-Key": "956abe1d10mshd6ea462a6a7e4ebp1e4099jsn70d018b4c2ea"
+    }
+
+    response = requests.request("POST", url, json=payload, headers=headers)
+
+    print(response.text)
