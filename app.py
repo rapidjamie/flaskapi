@@ -28,11 +28,14 @@ def isValid(emailInput):
 
     if re.fullmatch(regex, emailInput):
         response = {
+            "email" : emailInput,
+            "domain" : emailInput.split("@")[1], 
             "isValid": "Valid email"
         }
         return json.dumps(response)
     else:
         response = {
+            "email" : emailInput,
             "isValid": "invalid email"
         }
         return  json.dumps(response)
