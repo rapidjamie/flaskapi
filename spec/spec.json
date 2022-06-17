@@ -31,9 +31,11 @@
          }
       ]
    },
-   "x-gateways":[
-      
-   ],
+   "x-gateways": [
+      {
+        "url": "0s0iza6e20.execute-api.us-east-1.amazonaws.com/test"
+      }
+    ],
    "info":{
       "x-external-custom-id":"email-validation-github-6214590",
       "x-owner-id":"5686658",
