@@ -57,6 +57,7 @@ jobs:
           method: POST
           contentType: "application/json"
           file: ${{ steps.changed-spec-files.outputs.modified_files }}
+          timeout: 100000
 
       - name: Show Response
         run: echo ${{ steps.postToIntegrationLayer.outputs.response }}    
