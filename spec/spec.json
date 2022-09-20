@@ -33,14 +33,14 @@
    },
    "x-gateways": [
       {
-        "url": "rapidapi.com"
+        "url": "0s0iza6e20.execute-api.us-east-1.amazonaws.com/test"
       }
     ],
    "info":{
       "x-external-custom-id":"email-validation-github-6214590",
-      "x-owner-id":"6666002",
-      "title":"Email Validation Github",
-      "version":"1.0.01 Demo",
+      "x-owner-id":"5686658",
+      "title":"Email Validation Github 6214590",
+      "version":"2.9.31 Demo - retest api",
       "description":"Retrieve information about customers",
       "x-category":"Other",
       "x-long-description":"Retrieve information about customers",
