@@ -111,6 +111,7 @@
   },
   "info": {
     "x-external-custom-id":"email-validation",
+    "x-owner-id": "5910358"
     "title": "Email Validation Github",
     "version": "1.0",
     "description": "Email validation",
