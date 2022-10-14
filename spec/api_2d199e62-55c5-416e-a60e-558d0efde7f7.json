@@ -110,6 +110,7 @@
     }
   },
   "info": {
+    "x-external-custom-id":"email-validation",
     "title": "Email Validation Github",
     "version": "1.0",
     "description": "Email validation",
@@ -120,8 +121,7 @@
     "x-thumbnail": "https://rapidapi-prod-apis.s3.amazonaws.com/c0e8251d-5fb0-40fc-8f07-2474725dbe67.png",
     "x-version-lifecycle": "active",
     "x-badges": [],
-    "x-collections": [],
-    "x-external-custom-id":"email-validation"
+    "x-collections": []
   },
   "components": {
     "schemas": {}
