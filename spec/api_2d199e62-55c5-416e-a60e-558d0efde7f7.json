@@ -113,7 +113,7 @@
     "x-external-custom-id": "actions-email-validation",
     "x-owner-id": "5910358",
     "title": "Email Validation Actions",
-    "version": "1.0",
+    "version": "1.1",
     "description": "Email validation",
     "x-category": "Other",
     "x-long-description": "Email validation",
