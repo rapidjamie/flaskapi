@@ -1,0 +1,138 @@
+{
+  "openapi": "3.0.0",
+  "servers": [
+    {
+      "url": "https://nameless-depths-63278.herokuapp.com/"
+    }
+  ],
+  "tags": [
+    {
+      "name": "names"
+    },
+    {
+      "name": "validateEmail"
+    },
+    {
+      "name": "getAllNames"
+    }
+  ],
+  "paths": {
+    "/validateEmail/{email}": {
+      "get": {
+        "tags": [
+          "validateEmail"
+        ],
+        "summary": "Get the validation of an email address",
+        "parameters": [
+          {
+            "name": "email",
+            "in": "path",
+            "required": true,
+            "description": "The email to retrieve validation",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "operationId": "validateEmail",
+        "description": " ",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Example_1": {
+                    "value": {}
+                  }
+                },
+                "schema": {}
+              }
+            },
+            "description": ""
+          }
+        }
+      }
+    },
+    "/getAllNames": {
+      "get": {
+        "tags": [
+          "names"
+        ],
+        "summary": "List all names in system",
+        "operationId": "GetAllNames",
+        "description": " ",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Example_1": {
+                    "value": [
+                      {
+                        "id": 0,
+                        "name": "",
+                        "email": ""
+                      }
+                    ]
+                  }
+                },
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "required": [
+                      "id",
+                      "name",
+                      "email"
+                    ],
+                    "properties": {
+                      "id": {
+                        "type": "integer",
+                        "format": "int64",
+                        "minimum": -9223372036854776000,
+                        "maximum": 9223372036854776000
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "email": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "description": ""
+          }
+        }
+      }
+    }
+  },
+  "info": {
+    "title": "Email Validation Github",
+    "version": "1.0",
+    "description": "Email validation",
+    "x-category": "Other",
+    "x-long-description": "Email validation",
+    "x-website": "",
+    "x-public": false,
+    "x-thumbnail": "https://rapidapi-prod-apis.s3.amazonaws.com/c0e8251d-5fb0-40fc-8f07-2474725dbe67.png",
+    "x-version-lifecycle": "active",
+    "x-badges": [],
+    "x-collections": [],
+    "x-external-custom-id":"email-validation"
+  },
+  "components": {
+    "schemas": {}
+  },
+  "x-gateways": [],
+  "x-documentation": {
+    "tutorials": [],
+    "spotlights": []
+  },
+  "x-rapidapi-info": {
+    "apiVersionId": "apiversion_d2244745-2ac2-4ae2-b14e-c38879662013",
+    "apiId": "api_2d199e62-55c5-416e-a60e-558d0efde7f7"
+  }
+}
