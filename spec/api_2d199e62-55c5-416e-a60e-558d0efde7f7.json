@@ -110,7 +110,7 @@
     }
   },
   "info": {
-    "x-external-custom-id": "actions-email-validation",
+    "x-external-custom-id": "email-validation-actions",
     "x-owner-id": "5910358",
     "title": "Email Validation Actions",
     "version": "1.1",
