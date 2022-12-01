@@ -121,7 +121,16 @@
     "x-public": false,
     "x-thumbnail": "https://rapidapi-prod-apis.s3.amazonaws.com/c0e8251d-5fb0-40fc-8f07-2474725dbe67.png",
     "x-version-lifecycle": "active",
-    "x-badges": [],
+    "x-badges": [
+      {
+        "name": "Type",
+        "value": "REST"
+      },
+      {
+        "name": "Persona",
+        "value": "Consumer"
+    }
+  ],
     "x-collections": []
   },
   "components": {
