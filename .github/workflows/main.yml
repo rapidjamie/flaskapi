@@ -66,14 +66,14 @@ jobs:
 
       # Execute the Integration Tests on RapidAPI 
       # A failed test from RapidAPI will fail the GitHub Action
-      # - name: Execute Tests
-      #   id: tstExec
-      #   uses: RapidAPI/gh-api-testing-trigger@jeffrapid-patch-1 
-      #   with:
-      #     test: 'api_7d3aea5e-6d70-46d8-a8a7-5d8c8f2cbb4e'
-      #     location: 'AWS-US-EAST-1'
-      #     instance: 'commonwealth-evaluation.hub.rapidapi'
-      #     #environment: 'ENV_ID(OPTIONAL)'
+      - name: Execute Tests
+        id: tstExec
+        uses: RapidAPI/gh-api-testing-trigger@jeffrapid-patch-1 
+        with:
+          test: 'api_58ee05c3-b5c3-481a-8364-60a763835586'
+          location: 'AWS-US-EAST-1'
+          instance: 'commonwealth-evaluation.hub.rapidapi'
+          #environment: 'ENV_ID(OPTIONAL)'
 
       - name: Show Testing Results
         run: echo "The test took ${{ steps.tstExec.outputs.time }}ms to run"; echo "The test result was ${{ steps.tstExec.outputs.computedStatus }}"; echo "View Report - ${{ steps.tstExec.outputs.reportUrl }}"
