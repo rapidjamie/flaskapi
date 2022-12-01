@@ -110,9 +110,9 @@
     }
   },
   "info": {
-    "x-external-custom-id": "email-validation-github-actions",
+    "x-external-custom-id": "email-validation-github",
     "x-owner-id": "6614927",
-    "title": "Email Validation Github Actions",
+    "title": "Email Validation Github",
     "version": "1.0",
     "description": "Email validation",
     "x-category": "Other",
