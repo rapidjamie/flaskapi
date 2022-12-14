@@ -72,7 +72,7 @@ jobs:
         with:
           test: 'test_af62b85b-ab45-4ffc-bae4-d4edbf145028'
           location: 'AWS-US-EAST-1'
-          instance: 'jamie'
+          instance: 'jamie.hub.rapidapi'
           #environment: 'ENV_ID(OPTIONAL)'
 
       - name: Show Testing Results
