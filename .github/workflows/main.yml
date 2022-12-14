@@ -70,7 +70,7 @@ jobs:
         id: tstExec
         uses: RapidAPI/gh-api-testing-trigger@jeffrapid-patch-1 
         with:
-          test: 'api_7d3aea5e-6d70-46d8-a8a7-5d8c8f2cbb4e'
+          test: 'test_af62b85b-ab45-4ffc-bae4-d4edbf145028'
           location: 'AWS-US-EAST-1'
           instance: 'jamie'
           #environment: 'ENV_ID(OPTIONAL)'
