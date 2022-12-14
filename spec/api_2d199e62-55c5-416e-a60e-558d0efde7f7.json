@@ -110,9 +110,9 @@
     }
   },
   "info": {
-    "x-external-custom-id": "email-validation-github",
+    "x-external-custom-id": "email-validation-github-actions",
     "x-owner-id": "5910358",
-    "title": "Email Validation Github",
+    "title": "Email Validation Github Actions",
     "version": "1.1",
     "description": "Email validation",
     "x-category": "Other",
@@ -125,11 +125,7 @@
       {
         "name": "Type",
         "value": "REST"
-      },
-      {
-        "name": "Persona",
-        "value": "Consumer"
-    }
+      }
   ],
     "x-collections": []
   },
