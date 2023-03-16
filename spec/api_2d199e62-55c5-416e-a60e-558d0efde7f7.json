@@ -113,7 +113,7 @@
     "x-external-custom-id": "email-validation-github-actions",
     "x-owner-id": "5910358",
     "title": "Email Validation Github Actions",
-    "version": "2.3",
+    "version": "2.4",
     "description": "Email validation",
     "x-category": "Other",
     "x-long-description": "Email validation II",
